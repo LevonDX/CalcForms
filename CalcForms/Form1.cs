@@ -70,7 +70,7 @@ namespace CalcForms
                     first = result;
                     operation = sym;
 
-                    if(sym == '=')
+                    if (sym == '=')
                     {
                         first = null;
                     }
@@ -91,7 +91,31 @@ namespace CalcForms
                 case '/':
                     return first / second;
                 default:
-                    throw new InvalidOperationException($"operation {sym} is uknown");
+                    return first;
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char key = e.KeyChar;
+
+
+            foreach (Control button in this.panelNumpad.Controls)
+            {
+                Button btn = button as Button;
+                if (btn == null)
+                    continue;
+
+                if (btn.Text == key.ToString())
+                {
+                    btn.PerformClick();
+                    break;
+                }
             }
         }
     }

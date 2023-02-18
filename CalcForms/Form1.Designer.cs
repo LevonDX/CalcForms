@@ -256,6 +256,7 @@
             this.txtDisplay.Font = new System.Drawing.Font("Segoe UI", 14.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtDisplay.Location = new System.Drawing.Point(26, 44);
             this.txtDisplay.Name = "txtDisplay";
+            this.txtDisplay.ReadOnly = true;
             this.txtDisplay.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDisplay.Size = new System.Drawing.Size(906, 70);
             this.txtDisplay.TabIndex = 1;
@@ -264,15 +265,19 @@
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnEqual;
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 1244);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.panelNumpad);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.panelNumpad.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
